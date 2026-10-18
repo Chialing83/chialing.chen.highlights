@@ -14,6 +14,7 @@
       --card: #ffffff;
       --border: #e6e3dc;
       --avatar: #d9e4df;
+      --mark: #f6d3dd;
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
@@ -24,6 +25,7 @@
         --card: #1f1f1c;
         --border: #2e2e2a;
         --avatar: #2b3834;
+        --mark: #5a3a46;
       }
     }
     :root[data-theme="dark"] {
@@ -34,6 +36,7 @@
       --card: #1f1f1c;
       --border: #2e2e2a;
       --avatar: #2b3834;
+      --mark: #5a3a46;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 24px; }
@@ -60,9 +63,16 @@
     nav.anchors a { color: var(--muted); text-decoration: none; }
     nav.anchors a:hover { color: var(--accent); }
 
-    .hero h1 { font-size: 2.6rem; margin: 0 0 4px; letter-spacing: -0.02em; }
-    .title { color: var(--muted); margin: 0 0 16px; }
-    .bio { margin: 0; }
+    .wave { font-size: 2rem; line-height: 1; margin: 0 0 24px 8px; }
+    .hero h1 { font-size: 2.8rem; margin: 0 0 20px; letter-spacing: -0.02em; line-height: 1.1; }
+    .bio { margin: 0; font-size: 1.2rem; line-height: 1.7; color: var(--muted); }
+    .bio s { text-decoration-thickness: 3px; }
+    .bio mark {
+      background: var(--mark);
+      color: var(--fg);
+      padding: 0 2px;
+      border-radius: 3px;
+    }
 
     section { margin-top: 64px; scroll-margin-top: 24px; }
     h2 {
@@ -137,9 +147,9 @@
     </nav>
 
     <header id="hi" class="hero">
-      <h1>Chia-Ling Chen</h1>
-      <p class="title">Product builder at Thryv CRM</p>
-      <p class="bio">Hi, I'm Chia-Ling Chen. I build AI-assisted Automation Builder experiences at Thryv CRM.</p>
+      <div class="wave" aria-hidden="true">✌️</div>
+      <h1>hi, i'm chia-ling.</h1>
+      <p class="bio">i'm a <s>product designer</s> product builder at thryv crm, focusing on <mark>ai-assisted automation builder</mark>.</p>
     </header>
 
     <section id="highlights">
