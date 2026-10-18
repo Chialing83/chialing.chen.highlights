@@ -150,7 +150,7 @@
       margin: 0;
       padding: 0;
     }
-    .timeline li {
+    .timeline > li {
       display: grid;
       grid-template-columns: 120px 1fr;
       gap: 24px;
@@ -159,6 +159,23 @@
     .year { color: var(--muted); font-size: 0.9rem; padding-top: 3px; }
     .timeline h3 { font-size: 1.05rem; margin: 0 0 6px; }
     .timeline p { margin: 0; color: var(--muted); }
+    .timeline ul { margin: 0; padding-left: 1.1em; color: var(--muted); }
+    .timeline ul li + li { margin-top: 6px; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      color: var(--fg);
+      text-decoration: none;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .link-btn:hover, .link-btn:focus-visible { color: var(--accent); border-color: var(--accent); }
 
     .cards {
       display: grid;
@@ -181,9 +198,9 @@
     .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
     .contact p { margin: 0 0 14px; }
-    .links { display: flex; flex-wrap: wrap; gap: 20px; }
-    .links a { text-decoration: none; }
-    .links a:hover { text-decoration: underline; }
+    .contact .links { gap: 20px; }
+    .contact .links a { text-decoration: none; }
+    .contact .links a:hover { text-decoration: underline; }
 
     footer {
       margin-top: 80px;
@@ -194,7 +211,7 @@
 
     @media (max-width: 480px) {
       .hero h1 { font-size: 2.1rem; }
-      .timeline li { grid-template-columns: 1fr; gap: 4px; }
+      .timeline > li { grid-template-columns: 1fr; gap: 4px; }
     }
   </style>
 </head>
@@ -249,35 +266,82 @@
           <div class="year">2023 to present</div>
           <div>
             <h3>Sr. product designer, Thryv</h3>
-            <p>Leads the automation builder for small businesses. Helped move 58.5% of partner accounts to the new platform, above a 40% goal. Now developing a smarter decision-making step and AI-assisted workflow creation.</p>
+            <ul>
+              <li>Set a phased AI strategy for the Decision Diamond, from AI suggestions people review to workflows built by AI, now in alpha with 200+ core users.</li>
+              <li>Led the Automation Builder redesign behind a two-platform migration and shipped Canvas Search and Tidy Up, cutting edit-to-publish time by 24% and moving 58.5% of partner accounts in two quarters, beating a 40% goal.</li>
+              <li>Led a core dashboard redesign that lifted engagement 25% in 90 days.</li>
+              <li>Scaled AI tool adoption in the design org by writing 2 guides and a showcase on prototyping with Claude and coded components, and on testing prototypes with a live LLM.</li>
+            </ul>
+            <div class="links">
+              <a class="link-btn" href="https://keap.com/solutions/automation" target="_blank" rel="noopener">Keap Automation acquired by Thryv <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </li>
         <li>
           <div class="year">2022</div>
           <div>
-            <h3>Sr. product design co-op, IBM</h3>
-            <p>Worked on SPSS Modeler, a no-code, node-based machine learning and statistics canvas. Introduced scalable design patterns and refined the product's use of the Carbon Design System.</p>
+            <h3>Sr. UX design co-op, IBM</h3>
+            <ul>
+              <li>Designed for SPSS Modeler on Watson Studio, a node-based canvas where data scientists build machine learning models without code.</li>
+              <li>Partnered with 10+ subject-matter experts to deliver production specs and contributed scalable patterns to the Carbon Design System.</li>
+            </ul>
+            <div class="links">
+              <a class="link-btn" href="https://www.ibm.com/products/spss-modeler" target="_blank" rel="noopener">IBM SPSS Modeler <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </li>
         <li>
           <div class="year">2021 to 2022</div>
           <div>
             <h3>Master of design, UC Berkeley</h3>
-            <p>Studied emerging technology and product thinking. Co-founded Art for All, a nonprofit offering free resources so people with visual impairments can experience art online.</p>
+            <ul>
+              <li>Studied emerging technology and product thinking.</li>
+              <li>Co-founded Art for All, a nonprofit offering free resources so people with visual impairments can experience art online.</li>
+            </ul>
+            <div class="links">
+              <a class="link-btn" href="https://design.berkeley.edu/mdes-alumni/mdes-student-cohort-fall-2022" target="_blank" rel="noopener">UC Berkeley <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </li>
         <li>
           <div class="year">2020 to 2021</div>
           <div>
-            <h3>ASUS</h3>
-            <p>Role to confirm.</p>
+            <h3>Sr. UX designer, ASUS</h3>
+            <ul>
+              <li>Led design of a 0-to-1 healthcare app with a leading hospital group, covering scheduling, AI care suggestions, and a waiting room, reaching 32K users across APAC with 97% satisfaction (rated 4.1 on the App Store and 4.8 on Google Play).</li>
+              <li>Designed an alert system for front-line medical staff.</li>
+            </ul>
+            <div class="links">
+              <a class="link-btn" href="https://youtu.be/N78xwxmeQm0?si=wWI10j0BIYOIKvsJ" target="_blank" rel="noopener">ASUS Medical AI - Personal Healthcare APP <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </li>
         <li>
-          <div class="year">2017 to 2020</div>
+          <div class="year">2019 to 2020</div>
           <div>
-            <h3>Digital designer, Dyaco for Philips Physical Therapy Solutions</h3>
-            <p>Progressed from brand designer to design lead for Philips' physical therapy line. Shipped MyCare, which saved therapists up to 80% of their time. Launched a patient app with a hospital group, reaching 32K users with 97% satisfaction.</p>
+            <h3>Design lead, Dyaco</h3>
+            <ul>
+              <li>Led design of mobile-first SaaS for physical therapists in the U.S. and EMEA, boosting efficiency by 80% and cutting workload by 65%.</li>
+              <li>Presented the work at Philips' 2020 UX Design Practices webinar.</li>
+            </ul>
+            <div class="links">
+              <a class="link-btn" href="https://www.philips.ae/p-m-ph/physical-therapy-solutions" target="_blank" rel="noopener">Philips Physical Therapy <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="year">2017 to 2019</div>
+          <div>
+            <h3>Brand design manager, Dyaco</h3>
+            <ul>
+              <li>Led 5 brand designers across 8 brands with 30+ peers worldwide.</li>
+              <li>Launched a monthly partner newsletter reaching 1K+ partners in 60+ countries.</li>
+              <li>Established a new product series on Philips.com that grew revenue by 30%.</li>
+            </ul>
+            <div class="links">
+              <a class="link-btn" href="https://www.philips.ae/p-m-ph/physical-therapy-solutions" target="_blank" rel="noopener">Philips Physical Therapy <span aria-hidden="true">↗</span></a>
+              <a class="link-btn" href="https://dyaco.com/en/home-use/dyaco-home-use-brands/spirit" target="_blank" rel="noopener">Spirit Fitness <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </li>
       </ol>
@@ -285,7 +349,7 @@
 
     <section id="connect" class="contact">
       <h2>connect</h2>
-      <p>Want to talk about a project, a role, or an idea? I am always free for a coffee chat, even if it's virtual!</p>
+      <p>Want to talk about a project, a role, or an idea? I am always down for a coffee chat, even if it's virtual!</p>
       <div class="links">
         <a href="mailto:chia-ling.chen@thryv.com">email</a>
         <a href="#">linkedin</a>
