@@ -66,31 +66,50 @@
 
     section { margin-top: 64px; scroll-margin-top: 24px; }
     h2 {
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      margin: 0 0 24px;
-      padding-bottom: 6px;
+      color: var(--muted);
+      margin: 0 0 28px;
+      padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
-      display: inline-block;
     }
 
-    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 0 0 0 24px;
+      position: relative;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--border);
+    }
     .timeline li {
+      position: relative;
       display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 16px;
-      padding: 0 0 28px;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      padding: 0 0 32px;
     }
-    .year { color: var(--muted); font-variant-numeric: tabular-nums; }
-    .timeline h3 { font-size: 1rem; margin: 0 0 4px; }
-    .timeline p { margin: 0 0 10px; color: var(--muted); }
-    .avatars { display: flex; gap: 6px; }
-    .avatar {
-      width: 28px; height: 28px;
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 8px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: var(--avatar);
-      border: 1px solid var(--border);
+      background: var(--fg);
+      transform: translateX(0);
     }
+    .year { color: var(--muted); font-size: 0.9rem; padding-top: 3px; }
+    .timeline h3 { font-size: 1.05rem; margin: 0 0 6px; }
+    .timeline p { margin: 0; color: var(--muted); }
 
     .cards {
       display: grid;
@@ -146,28 +165,41 @@
     </header>
 
     <section id="journey">
-      <h2>journey</h2>
+      <h2>Experience</h2>
       <ol class="timeline">
         <li>
-          <div class="year">2026</div>
+          <div class="year">2023 to present</div>
           <div>
-            <h3>Product builder, Thryv CRM</h3>
-            <p>Focusing on AI-assisted Automation Builder.</p>
-            <div class="avatars" aria-hidden="true"><span class="avatar"></span><span class="avatar"></span></div>
+            <h3>Sr. product designer, Thryv</h3>
+            <p>Leads the automation builder for small businesses. Helped move 58.5% of partner accounts to the new platform, above a 40% goal. Now developing a smarter decision-making step and AI-assisted workflow creation.</p>
           </div>
         </li>
         <li>
-          <div class="year">2023</div>
+          <div class="year">2022</div>
           <div>
-            <h3>Previous role</h3>
-            <p>A key responsibility or outcome from this role.</p>
+            <h3>Sr. product design co-op, IBM</h3>
+            <p>Worked on SPSS Modeler, a no-code, node-based machine learning and statistics canvas. Introduced scalable design patterns and refined the product's use of the Carbon Design System.</p>
           </div>
         </li>
         <li>
-          <div class="year">2018</div>
+          <div class="year">2021 to 2022</div>
           <div>
-            <h3>Earlier role</h3>
-            <p>Where you started and what you learned.</p>
+            <h3>Master of design, UC Berkeley</h3>
+            <p>Studied emerging technology and product thinking. Co-founded Art for All, a nonprofit offering free resources so people with visual impairments can experience art online.</p>
+          </div>
+        </li>
+        <li>
+          <div class="year">2020 to 2021</div>
+          <div>
+            <h3>ASUS</h3>
+            <p>Role to confirm.</p>
+          </div>
+        </li>
+        <li>
+          <div class="year">2017 to 2020</div>
+          <div>
+            <h3>Digital designer, Dyaco for Philips Physical Therapy Solutions</h3>
+            <p>Progressed from brand designer to design lead for Philips' physical therapy line. Shipped MyCare, which saved therapists up to 80% of their time. Launched a patient app with a hospital group, reaching 32K users with 97% satisfaction.</p>
           </div>
         </li>
       </ol>
