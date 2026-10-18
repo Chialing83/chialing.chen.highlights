@@ -3,26 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <title>Work · Chia-Ling Chen</title>
   <meta name="description" content="Selected work by Chia-Ling Chen.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
   <main>
-    <nav class="anchors" aria-label="Site">
-      <a href="index.html">home</a>
-      <a href="work.html" aria-current="page">work</a>
-      <a href="about.html">about</a>
-      <a href="#" target="_blank" rel="noopener">resume</a>
-    </nav>
+    <header class="site-header">
+      <nav class="anchors" aria-label="Site">
+        <span class="nav-indicator" aria-hidden="true"></span>
+        <a href="index.html">Home</a>
+        <a href="work.html" aria-current="page">Work</a>
+        <a href="about.html">About</a>
+        <div class="nav-menu">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="connect-menu">Connect <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+          <div class="nav-dropdown" id="connect-menu">
+            <a href="https://app.box.com/s/g18ac6s28a0lqebf420xtzzz90ov93px" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Resume
+            </a>
+            <a href="https://www.linkedin.com/in/silvia-chia-ling-chen" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn
+            </a>
+            <a href="mailto:chia-ling.chen@thryv.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <header class="page-head">
-      <h1>work</h1>
+      <h1>Work</h1>
       <p>Projects, case studies, and things I've built.</p>
     </header>
 
     <section id="projects">
-      <h2>projects</h2>
+      <h2>Projects</h2>
       <div class="cards">
         <a class="card" href="#">
           <div class="platform">Web app</div>
@@ -43,9 +60,23 @@
     </section>
 
     <footer>
-      <p>brewed with morning ☕️ + afternoon 🍵 + extra ❤️</p>
-      <p>&copy; 2026 Chia-Ling Chen</p>
+      <p class="footer__pitch">Want to talk about a project, a role, or an idea?</p>
+      <p class="footer__sub">I am always down for a coffee chat, even if it's virtual!</p>
+      <div class="social">
+        <a class="icon-btn" href="mailto:chia-ling.chen@thryv.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/silvia-chia-ling-chen" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+        </a>
+        <a class="icon-btn" href="https://app.box.com/s/g18ac6s28a0lqebf420xtzzz90ov93px" target="_blank" rel="noopener" aria-label="Resume">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+        </a>
+      </div>
+      <p class="footer__note">Brewed with morning ☕️ + afternoon 🍵 + extra ❤️ &nbsp;&copy; 2026 Chia-Ling Chen</p>
     </footer>
   </main>
+  <script src="nav.js?v=2"></script>
+  <script src="motion.js?v=3"></script>
 </body>
 </html>

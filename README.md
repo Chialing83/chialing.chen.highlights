@@ -9,7 +9,7 @@ A multi-page portfolio site for Chia-Ling Chen, hosted on GitHub Pages.
 - `about.html`: experience and contact
 - `style.css`: shared styles for every page
 
-The nav's resume link is a placeholder (`#`) in each page. Point it at your resume, then commit and push.
+Edit a page, then commit and push.
 
 ## Publish
 

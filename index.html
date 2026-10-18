@@ -3,35 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <title>Chia-Ling Chen</title>
   <meta name="description" content="Chia-Ling Chen, product builder at Thryv CRM.">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
   <main>
-    <nav class="anchors" aria-label="Site">
-      <a href="index.html" aria-current="page">home</a>
-      <a href="work.html">work</a>
-      <a href="about.html">about</a>
-      <a href="#" target="_blank" rel="noopener">resume</a>
-    </nav>
+    <header class="site-header">
+      <nav class="anchors" aria-label="Site">
+        <span class="nav-indicator" aria-hidden="true"></span>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <div class="nav-menu">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="connect-menu">Connect <svg class="nav-caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>
+          <div class="nav-dropdown" id="connect-menu">
+            <a href="https://app.box.com/s/g18ac6s28a0lqebf420xtzzz90ov93px" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Resume
+            </a>
+            <a href="https://www.linkedin.com/in/silvia-chia-ling-chen" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn
+            </a>
+            <a href="mailto:chia-ling.chen@thryv.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
 
     <header id="hi" class="hero">
       <div class="hero-top">
-        <div class="avatar" tabindex="0" aria-label="Profile picture">
-          <img class="avatar__photo" src="avatar.svg" alt="Chia-Ling Chen" />
-          <span class="avatar__wave" aria-hidden="true">👋</span>
-        </div>
+        <span class="avatar-ring">
+          <span class="avatar" tabindex="0" role="img" aria-label="Chia-Ling Chen, profile picture">
+            <span class="avatar__card">
+              <img class="avatar__photo" src="avatar.jpg" alt="" />
+              <span class="avatar__wave" aria-hidden="true"><span class="avatar__hand">👋</span></span>
+            </span>
+          </span>
+        </span>
         <div>
           <h1>Chia-Ling Chen</h1>
-          <p class="sub">Product builder at Thryv CRM</p>
         </div>
       </div>
-      <p class="bio">i'm a <s>product designer</s> product builder at thryv crm, focusing on <mark>ai-assisted automation builder</mark>.</p>
+      <p class="bio">I'm a <s>product designer</s> product builder at Thryv CRM, focusing on <mark>AI-assisted Automation Builder</mark>.</p>
     </header>
 
     <section id="highlights">
-      <h2>selected work</h2>
+      <h2>Featured work</h2>
+      <a class="card card--hero" href="#">
+        <figure class="card__media">
+          <!-- Replace with <img src="media/hero.jpg" alt="..."> or <video src="media/hero.mp4" autoplay muted loop playsinline></video> -->
+          <div class="exp-media__placeholder">Hero image</div>
+        </figure>
+        <div class="card__body">
+          <div class="platform">Case study</div>
+          <h3>Primary project title</h3>
+          <p>Two or three sentences on the problem, what you designed or built, and the result it drove.</p>
+          <span class="card__cta">View case study →</span>
+        </div>
+      </a>
       <div class="cards">
         <a class="card" href="#">
           <div class="platform">Web app</div>
@@ -49,18 +81,124 @@
           <p>One line on what it does.</p>
         </a>
       </div>
-      <p class="more"><a href="work.html">see all work →</a></p>
+      <p class="more"><a href="work.html">See all work →</a></p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li>
+          <div class="year-col">
+            <div class="year">2023 - present</div>
+            <a class="logo logo--img" href="https://www.thryv.com/" target="_blank" rel="noopener" aria-label="Thryv website"><img src="logos/thryv.png" alt=""></a>
+          </div>
+          <div>
+            <h3>Sr. product designer, Thryv</h3>
+            <p>B2B SaaS | Customer relationship management | Marketing automation</p>
+          </div>
+        </li>
+        <li>
+          <div class="year-col">
+            <div class="year">2022</div>
+            <a class="logo logo--img" href="https://www.ibm.com/" target="_blank" rel="noopener" aria-label="IBM website"><img src="logos/ibm.svg" alt=""></a>
+          </div>
+          <div>
+            <h3>Sr. UX design co-op, IBM</h3>
+            <p>B2B | Data science &amp; AI | No-code machine learning builder</p>
+          </div>
+        </li>
+        <li>
+          <div class="year-col">
+            <div class="year">2021 - 2022</div>
+            <a class="logo logo--img" href="https://design.berkeley.edu/" target="_blank" rel="noopener" aria-label="Berkeley MDes website"><img src="logos/berkeley-mdes.jpg" alt=""></a>
+          </div>
+          <div>
+            <h3>Master of design, UC Berkeley</h3>
+            <p>Graduate degree | Emerging technology | Co-founded <a href="https://app.art-for-all.tw/exhibitions" target="_blank" rel="noopener">Art for All</a> nonprofit</p>
+          </div>
+        </li>
+        <li>
+          <div class="year-col">
+            <div class="year">2020 - 2021</div>
+            <a class="logo logo--img" href="https://www.asus.com/" target="_blank" rel="noopener" aria-label="ASUS website"><img src="logos/asus.svg" alt=""></a>
+          </div>
+          <div>
+            <h3>Sr. UX designer, ASUS</h3>
+            <p>B2C | Medical AI | B2C personal health app + B2B medical alert monitor system</p>
+          </div>
+        </li>
+        <li>
+          <div class="year-col">
+            <div class="year">2019 - 2020</div>
+            <a class="logo logo--img" href="https://www.philips.com/" target="_blank" rel="noopener" aria-label="Philips website"><img src="logos/philips.svg" alt=""></a>
+          </div>
+          <div>
+            <h3>Design lead, Dyaco</h3>
+            <p>B2B SaaS | Healthcare | Philips Physical Therapy Solutions</p>
+          </div>
+        </li>
+        <li>
+          <div class="year-col">
+            <div class="year">2017 - 2019</div>
+            <a class="logo logo--img logo--dark" href="https://dyaco.com/en/" target="_blank" rel="noopener" aria-label="Dyaco website"><img src="logos/dyaco.svg" alt=""></a>
+          </div>
+          <div>
+            <h3>Brand design manager, Dyaco</h3>
+            <p>B2B &amp; B2C | Brand design | Global marketing</p>
+          </div>
+        </li>
+      </ol>
+      <p class="more"><a href="about.html">See full experience →</a></p>
     </section>
 
     <footer>
-      <p>brewed with morning ☕️ + afternoon 🍵 + extra ❤️</p>
-      <p>&copy; 2026 Chia-Ling Chen</p>
+      <p class="footer__pitch">Want to talk about a project, a role, or an idea?</p>
+      <p class="footer__sub">I am always down for a coffee chat, even if it's virtual!</p>
+      <div class="social">
+        <a class="icon-btn" href="mailto:chia-ling.chen@thryv.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/silvia-chia-ling-chen" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+        </a>
+        <a class="icon-btn" href="https://app.box.com/s/g18ac6s28a0lqebf420xtzzz90ov93px" target="_blank" rel="noopener" aria-label="Resume">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+        </a>
+      </div>
+      <p class="footer__note">Brewed with morning ☕️ + afternoon 🍵 + extra ❤️ &nbsp;&copy; 2026 Chia-Ling Chen</p>
     </footer>
   </main>
   <script>
     // Toggle on tap/click for touch devices
     const avatar = document.querySelector('.avatar');
     avatar.addEventListener('click', () => avatar.classList.toggle('is-active'));
+
+    // First visit only: flip to the wave and back once so visitors notice the interaction.
+    // Add ?peek to the URL to replay it while testing.
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const forcePeek = new URLSearchParams(location.search).has('peek');
+    let peeked = false;
+    try { peeked = localStorage.getItem('avatar-peeked') === '1'; } catch (e) {}
+    const playPeek = () => {
+      setTimeout(() => {
+        if (avatar.matches(':hover') || avatar.classList.contains('is-active')) return;
+        avatar.classList.add('is-peek');
+        setTimeout(() => avatar.classList.remove('is-peek'), 1900);
+        // Only remember it once it has actually played
+        try { localStorage.setItem('avatar-peeked', '1'); } catch (e) {}
+      }, 900);
+    };
+    if (!reduceMotion && (forcePeek || !peeked)) {
+      // Wait until the tab is visible, so a page opened in the background still gets it
+      if (document.visibilityState === 'visible') playPeek();
+      else document.addEventListener('visibilitychange', function onShow() {
+        if (document.visibilityState !== 'visible') return;
+        document.removeEventListener('visibilitychange', onShow);
+        playPeek();
+      });
+    }
   </script>
+  <script src="nav.js?v=2"></script>
+  <script src="motion.js?v=3"></script>
 </body>
 </html>
