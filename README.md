@@ -1,10 +1,15 @@
 # chialing.chen.highlights
 
-A one-page portfolio site for Chia-Ling Chen, hosted on GitHub Pages.
+A multi-page portfolio site for Chia-Ling Chen, hosted on GitHub Pages.
 
 ## Edit
 
-All content lives in `index.html`. Replace the placeholder text in the About and Highlights sections, then commit and push.
+- `index.html`: home (intro and selected work)
+- `work.html`: all projects
+- `about.html`: experience and contact
+- `style.css`: shared styles for every page
+
+The nav's resume link is a placeholder (`#`) in each page. Point it at your resume, then commit and push.
 
 ## Publish
 
