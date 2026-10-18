@@ -63,8 +63,20 @@
     nav.anchors a { color: var(--muted); text-decoration: none; }
     nav.anchors a:hover { color: var(--accent); }
 
-    .wave { font-size: 2rem; line-height: 1; margin: 0 0 24px 8px; }
-    .hero h1 { font-size: 2.8rem; margin: 0 0 20px; letter-spacing: -0.02em; line-height: 1.1; }
+    .hero-top { display: flex; align-items: center; gap: 16px; margin: 0 0 28px; }
+    .avatar-lg {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--avatar);
+      border: 1px solid var(--border);
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .hero h1 { font-size: 1.6rem; margin: 0; letter-spacing: -0.01em; line-height: 1.2; }
+    .hero .sub { margin: 2px 0 0; font-size: 0.95rem; color: var(--muted); }
     .bio { margin: 0; font-size: 1.2rem; line-height: 1.7; color: var(--muted); }
     .bio s { text-decoration-thickness: 3px; }
     .bio mark {
@@ -147,8 +159,13 @@
     </nav>
 
     <header id="hi" class="hero">
-      <div class="wave" aria-hidden="true">✌️</div>
-      <h1>hi, i'm chia-ling.</h1>
+      <div class="hero-top">
+        <div class="avatar-lg" aria-hidden="true">CC</div>
+        <div>
+          <h1>Chia-Ling Chen</h1>
+          <p class="sub">Product builder at Thryv CRM</p>
+        </div>
+      </div>
       <p class="bio">i'm a <s>product designer</s> product builder at thryv crm, focusing on <mark>ai-assisted automation builder</mark>.</p>
     </header>
 
