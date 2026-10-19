@@ -1,10 +1,63 @@
-// Subtle scroll reveal: sections, cards and timeline rows fade up as they enter the viewport
+// Clips load and play only once they are near the viewport, so opening a page
+// does not download every clip on it up front
 (function () {
+  const clips = [].slice.call(document.querySelectorAll('video'));
+  if (!clips.length) return;
+
+  // Respect reduced motion: leave the clips paused and let the reader start them
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    // Respect reduced motion: stop looping clips and show their controls instead
-    document.querySelectorAll('video[autoplay]').forEach((v) => { v.pause(); v.removeAttribute('autoplay'); v.controls = true; });
+    clips.forEach((v) => { v.controls = true; });
     return;
   }
+
+  // A screen of lead time, so a clip is ready by the time it scrolls into view
+  const MARGIN = 600;
+
+  const start = (v) => {
+    if (v.preload !== 'auto') v.preload = 'auto';
+    if (!v.paused) return;
+    const playing = v.play();
+    if (playing && playing.catch) playing.catch(() => {});
+  };
+
+  const sync = () => {
+    const h = window.innerHeight || document.documentElement.clientHeight;
+    clips.forEach((v) => {
+      const box = v.getBoundingClientRect();
+      const near = box.bottom > -MARGIN && box.top < h + MARGIN;
+      if (near) {
+        start(v);
+      } else if (!v.paused) {
+        v.pause();
+      }
+    });
+  };
+
+  let queued = false;
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; sync(); });
+  };
+
+  sync();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('load', sync);
+
+  // Second trigger, in case the scroll handler never runs. It only ever starts
+  // a clip; pausing stays with sync() so the two cannot fight each other.
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) start(entry.target); });
+    }, { rootMargin: MARGIN + 'px 0px' });
+    clips.forEach((v) => io.observe(v));
+  }
+})();
+
+// Subtle scroll reveal: sections, cards and timeline rows fade up as they enter the viewport
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
 
   const groups = [
