@@ -538,6 +538,7 @@ footer {
 .case-head h1 { margin: 0 0 16px; font-size: 2rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
 .case-lead { margin: 0; font-size: 1.2rem; line-height: 1.65; color: var(--muted); }
 .case-meta {
+  max-width: 46rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px 32px;
