@@ -252,14 +252,22 @@ nav.anchors .nav-dropdown a:focus-visible { background: var(--card); color: var(
 .hero .sub { margin: 2px 0 0; font-size: max(14px, 0.95rem); color: var(--muted); }
 .bio { margin: 0; font-size: 1.2rem; line-height: 1.7; color: var(--muted); }
 .bio s {
-  /* Crayon-style strike, drawn as a textured stroke behind the word */
+  /* Crayon-style strike, drawn as a textured stroke across the word */
+  position: relative;
   text-decoration: none;
-  background-image: var(--strike-crayon);
-  background-repeat: no-repeat;
-  background-size: 108% 0.7em;
-  background-position: 0 58%;
   padding: 0 3px;
   margin: 0 -3px;
+}
+.bio s::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 50%;
+  height: 0.7em;
+  transform: translateY(-50%);
+  background: var(--strike-crayon) no-repeat center / 100% 100%;
+  pointer-events: none;
 }
 .bio-aside { margin: 14px 0 0; max-width: 40em; font-size: 1.2rem; line-height: 1.7; color: var(--muted); }
 .bio mark {
