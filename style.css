@@ -622,7 +622,8 @@ footer {
 
 /* ---------- Lightbox ---------- */
 .is-zoomable { cursor: zoom-in; transition: transform 0.25s ease, box-shadow 0.25s ease; }
-.case-figure .is-zoomable:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+.case-figure .is-zoomable:hover,
+.exp-media .is-zoomable:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
 .is-zoomable:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 html.lightbox-open { overflow: hidden; }
 .lightbox {
@@ -634,10 +635,10 @@ html.lightbox-open { overflow: hidden; }
   padding: 0;
   border: 0;
   background: transparent;
-  color: #f1efe9;
+  color: var(--fg);
   overflow: hidden;
 }
-.lightbox::backdrop { background: rgba(14, 14, 12, 0.96); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.lightbox::backdrop { background: color-mix(in srgb, var(--bg) 96%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 .lightbox[open] { display: grid; grid-template-rows: auto 1fr auto; animation: lightbox-in 0.25s ease; }
 @keyframes lightbox-in { from { opacity: 0; } to { opacity: 1; } }
 .lightbox__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; }
@@ -649,9 +650,9 @@ html.lightbox-open { overflow: hidden; }
   min-width: 40px;
   height: 40px;
   padding: 0 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: color-mix(in srgb, var(--fg) 8%, transparent);
   color: inherit;
   font: inherit;
   font-size: max(14px, 0.95rem);
@@ -659,7 +660,7 @@ html.lightbox-open { overflow: hidden; }
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 .lightbox__btn:hover, .lightbox__nav:hover,
-.lightbox__btn:focus-visible, .lightbox__nav:focus-visible { background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.4); outline: none; }
+.lightbox__btn:focus-visible, .lightbox__nav:focus-visible { background: color-mix(in srgb, var(--fg) 18%, transparent); border-color: color-mix(in srgb, var(--fg) 40%, transparent); outline: none; }
 .lightbox__btn[hidden] { display: none; }
 .lightbox__zoom { min-width: 64px; }
 .lightbox__stage {

@@ -1,7 +1,7 @@
 // Lightbox for case study media: click any image or clip to view it large,
 // zoom images with the buttons, a click, the +/- keys or ctrl/pinch-scroll, and drag to pan.
 (function () {
-  const items = [...document.querySelectorAll('.case-hero video, .case-figure img, .case-figure video')];
+  const items = [...document.querySelectorAll('.case-hero video, .case-figure img, .case-figure video, .exp-media img, .exp-media video')];
   if (!items.length) return;
 
   const dialog = document.createElement('dialog');
