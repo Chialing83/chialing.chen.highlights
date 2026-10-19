@@ -1,6 +1,10 @@
 // Subtle scroll reveal: sections, cards and timeline rows fade up as they enter the viewport
 (function () {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    // Respect reduced motion: stop looping clips and show their controls instead
+    document.querySelectorAll('video[autoplay]').forEach((v) => { v.pause(); v.removeAttribute('autoplay'); v.controls = true; });
+    return;
+  }
   if (!('IntersectionObserver' in window)) return;
 
   const groups = [
@@ -9,6 +13,10 @@
     ['.cards > .card', 80],
     ['.timeline > li', 60],
     ['.more', 0],
+    ['.case-hero, .case-head, .case-meta', 80],
+    ['.case-section > h2, .case-text, .case-stats, .case-list', 0],
+    ['.case-figure', 0],
+    ['.cta > *', 60],
     ['footer > *', 60],
   ];
   const items = [];

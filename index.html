@@ -6,7 +6,16 @@
   <meta name="color-scheme" content="light dark">
   <title>Chia-Ling Chen</title>
   <meta name="description" content="Chia-Ling Chen, product builder at Thryv CRM.">
-  <link rel="stylesheet" href="style.css?v=19">
+  <link rel="stylesheet" href="style.css?v=63">
+  <script>
+    // First visit to home: hold the intro until the welcome sequence plays (?intro replays it)
+    try {
+      var replay = /[?&](intro|peek)\b/.test(location.search);
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && (replay || localStorage.getItem('home-intro') !== '1')) {
+        document.documentElement.classList.add('intro-pending');
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
   <main>
@@ -44,27 +53,28 @@
           </span>
         </span>
         <div>
-          <h1>Chia-Ling Chen</h1>
+          <h1>I am Chia-Ling Chen!</h1>
         </div>
       </div>
-      <p class="bio">I'm a <s>product designer</s> product builder at Thryv CRM, focusing on <mark>AI-assisted Automation Builder</mark>.</p>
+      <p class="bio">Product <s>designer</s> builder. I <mark>untangle complex systems</mark> for the people who rely on them. I’ve designed AI features from Healthcare to Customer Relationship Management (CRM) Automation, and I prototype with real code and live LLMs to test ideas fast.</p>
+      <p class="bio-aside">(I love traveling, biking, cooking, and baking.)</p>
     </header>
 
     <section id="highlights">
       <h2>Featured work</h2>
-      <a class="card card--hero" href="#">
+      <a class="card card--hero" href="thryv-automation.html">
         <figure class="card__media">
-          <!-- Replace with <img src="media/hero.jpg" alt="..."> or <video src="media/hero.mp4" autoplay muted loop playsinline></video> -->
-          <div class="exp-media__placeholder">Hero image</div>
+          <video src="media/thryv-automation/hero-flow.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Automation Builder canvas in Thryv CRM"></video>
         </figure>
         <div class="card__body">
-          <div class="platform">Case study</div>
-          <h3>Primary project title</h3>
-          <p>Two or three sentences on the problem, what you designed or built, and the result it drove.</p>
+          <div class="platform">Case study · Thryv CRM</div>
+          <h3>Let the business run itself</h3>
+          <p>Trusted by 200K+ small business owners, Thryv's Automation Builder helps them create growth and profit faster by automating the entire business. For example, a confirmation can go out the moment an appointment is booked. This case study highlights some of the features I designed and shipped to help move our most invested users onto one unified platform, finding the table stakes to close the gap and making the switch seamless and complex flows effortless to build.</p>
           <span class="card__cta">View case study →</span>
         </div>
       </a>
-      <div class="cards">
+      <!-- Placeholder projects, hidden until they are ready: remove "hidden" to show them -->
+      <div class="cards" hidden>
         <a class="card" href="#">
           <div class="platform">Web app</div>
           <h3>Project title</h3>
@@ -81,7 +91,6 @@
           <p>One line on what it does.</p>
         </a>
       </div>
-      <p class="more"><a href="work.html">See all work →</a></p>
     </section>
 
     <section id="experience">
@@ -151,21 +160,18 @@
       <p class="more"><a href="about.html">See full experience →</a></p>
     </section>
 
-    <footer>
+    <section class="cta" aria-label="Get in touch">
       <p class="footer__pitch">Want to talk about a project, a role, or an idea?</p>
       <p class="footer__sub">I am always down for a coffee chat, even if it's virtual!</p>
-      <div class="social">
-        <a class="icon-btn" href="mailto:chia-ling.chen@thryv.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        </a>
-        <a class="icon-btn" href="https://www.linkedin.com/in/silvia-chia-ling-chen" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
-        </a>
-        <a class="icon-btn" href="https://app.box.com/s/g18ac6s28a0lqebf420xtzzz90ov93px" target="_blank" rel="noopener" aria-label="Resume">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
-        </a>
-      </div>
-      <p class="footer__note">Brewed with morning ☕️ + afternoon 🍵 + extra ❤️ &nbsp;&copy; 2026 Chia-Ling Chen</p>
+    </section>
+
+    <footer>
+      <p class="footer__note">&copy; 2026 Chia-Ling Chen <span class="footer__sep" aria-hidden="true"></span> Brewed with morning ☕️ + afternoon 🍵 + extra ❤️</p>
+      <nav class="footer__links" aria-label="Contact">
+        <a href="https://app.box.com/s/g18ac6s28a0lqebf420xtzzz90ov93px" target="_blank" rel="noopener">Resume</a>
+        <a href="https://www.linkedin.com/in/silvia-chia-ling-chen" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:chia-ling.chen@thryv.com">Email</a>
+      </nav>
     </footer>
   </main>
   <script>
@@ -173,32 +179,29 @@
     const avatar = document.querySelector('.avatar');
     avatar.addEventListener('click', () => avatar.classList.toggle('is-active'));
 
-    // First visit only: flip to the wave and back once so visitors notice the interaction.
-    // Add ?peek to the URL to replay it while testing.
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const forcePeek = new URLSearchParams(location.search).has('peek');
-    let peeked = false;
-    try { peeked = localStorage.getItem('avatar-peeked') === '1'; } catch (e) {}
-    const playPeek = () => {
-      setTimeout(() => {
-        if (avatar.matches(':hover') || avatar.classList.contains('is-active')) return;
-        avatar.classList.add('is-peek');
-        setTimeout(() => avatar.classList.remove('is-peek'), 1900);
-        // Only remember it once it has actually played
-        try { localStorage.setItem('avatar-peeked', '1'); } catch (e) {}
-      }, 900);
-    };
-    if (!reduceMotion && (forcePeek || !peeked)) {
+    // First visit: play the welcome sequence, then flip the profile photo once to hint at the wave
+    const root = document.documentElement;
+    if (root.classList.contains('intro-pending')) {
+      const start = () => {
+        root.classList.remove('intro-pending');
+        root.classList.add('intro-play');
+        try { localStorage.setItem('home-intro', '1'); } catch (e) {}
+        setTimeout(() => {
+          if (avatar.matches(':hover') || avatar.classList.contains('is-active')) return;
+          avatar.classList.add('is-peek');
+          setTimeout(() => avatar.classList.remove('is-peek'), 1900);
+        }, 150);
+      };
       // Wait until the tab is visible, so a page opened in the background still gets it
-      if (document.visibilityState === 'visible') playPeek();
+      if (document.visibilityState === 'visible') start();
       else document.addEventListener('visibilitychange', function onShow() {
         if (document.visibilityState !== 'visible') return;
         document.removeEventListener('visibilitychange', onShow);
-        playPeek();
+        start();
       });
     }
   </script>
   <script src="nav.js?v=2"></script>
-  <script src="motion.js?v=3"></script>
+  <script src="motion.js?v=5"></script>
 </body>
 </html>
