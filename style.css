@@ -269,7 +269,7 @@ nav.anchors .nav-dropdown a:focus-visible { background: var(--card); color: var(
   background: var(--strike-crayon) no-repeat center / 100% 100%;
   pointer-events: none;
 }
-.bio-aside { margin: 14px 0 0; max-width: 40em; font-size: 1.2rem; line-height: 1.7; color: var(--muted); }
+.bio-aside { margin: 14px 0 0; font-size: 1.2rem; line-height: 1.7; color: var(--muted); }
 .bio mark {
   /* Hand-drawn marker highlight with uneven edges; repeats cleanly across line wraps */
   background: var(--mark-brush) no-repeat 0 55% / 100% 88%;
@@ -382,7 +382,6 @@ a.logo:hover, a.logo:focus-visible { transform: translateY(-2px); box-shadow: 0 
 }
 .card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .card--hero {
-  max-width: 48em;
   display: grid;
   grid-template-columns: 1fr;
   padding: 0;
@@ -467,9 +466,6 @@ footer {
 }
 
 /* Keep long text at a readable line length inside the wider column */
-.bio { max-width: 40em; }
-.timeline > li > div:last-child { max-width: 75ch; }
-.page-head p { max-width: 65ch; }
 
 @media (max-width: 480px) {
   .footer__pitch { font-size: 1.5rem; }
@@ -533,12 +529,11 @@ footer {
   .case-hero--clips { grid-template-columns: 2.216fr 1.405fr 1.004fr; gap: 12px; margin-bottom: 40px; }
   .hero-clip--flow { grid-column: auto; }
 }
-.case-head { max-width: 46rem; }
+
 .case-kicker { margin: 0 0 8px; font-size: max(14px, 0.9rem); font-weight: 500; color: var(--accent); }
 .case-head h1 { margin: 0 0 16px; font-size: 2rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
 .case-lead { margin: 0; font-size: 1.2rem; line-height: 1.65; color: var(--muted); }
 .case-meta {
-  max-width: 46rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px 32px;
@@ -561,7 +556,7 @@ footer {
   color: var(--fg);
 }
 .case-section h3 { margin: 40px 0 12px; font-size: 1.2rem; }
-.case-text { max-width: 46rem; }
+
 .case-text p { margin: 0 0 16px; color: var(--muted); line-height: 1.75; }
 .case-text p.case-kicker { margin-bottom: 8px; color: var(--accent); }
 .case-callout {
@@ -578,7 +573,7 @@ footer {
 .case-text .case-callout + .case-callout { margin-top: 16px; }
 .case-text .case-callout ul { margin: 0; padding-left: 1.2em; color: var(--fg); line-height: 1.75; }
 .case-text .case-callout li + li { margin-top: 6px; }
-.case-list, .case-goals { margin: 0; padding-left: 1.2em; max-width: 46rem; color: var(--muted); line-height: 1.75; }
+.case-list, .case-goals { margin: 0; padding-left: 1.2em; color: var(--muted); line-height: 1.75; }
 .case-list li + li, .case-goals li + li { margin-top: 10px; }
 .case-goals strong { color: var(--fg); }
 .case-stats {
