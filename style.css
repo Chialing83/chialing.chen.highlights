@@ -608,7 +608,7 @@ footer {
 .case-figure figcaption { margin-top: 10px; font-size: max(14px, 0.9rem); color: var(--muted); }
 /* Clips shown side by side share one frame shape so they line up */
 .case-pair .case-figure video { aspect-ratio: 2 / 1; object-fit: cover; }
-.case-figure--text { max-width: 46rem; margin-bottom: 32px; }
+.case-figure--text { margin-bottom: 32px; }
 .case-figure--small { max-width: 28rem; }
 .case-split--logic { margin-bottom: 8px; }
 /* Artwork with a transparent background sits straight on the page */
