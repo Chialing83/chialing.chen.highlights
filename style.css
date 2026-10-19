@@ -382,7 +382,7 @@ a.logo:hover, a.logo:focus-visible { transform: translateY(-2px); box-shadow: 0 
 }
 .card:hover { border-color: var(--accent); transform: translateY(-2px); }
 .card--hero {
-  max-width: 40em;
+  max-width: 48em;
   display: grid;
   grid-template-columns: 1fr;
   padding: 0;
