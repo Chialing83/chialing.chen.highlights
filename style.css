@@ -621,6 +621,8 @@ footer {
   .case-split .case-figure { margin-top: 0; }
   .case-split--logic { grid-template-columns: minmax(0, 24rem) minmax(0, 1fr); gap: 40px; margin-top: 8px; }
   .case-split--logic .case-text p:last-of-type { margin-bottom: 16px; }
+  /* A diagram beside a short note: the text leads, the artwork sits smaller */
+  .case-split--note { grid-template-columns: minmax(0, 1fr) minmax(0, 22rem); }
   .case-pair { grid-template-columns: 1fr 1fr; align-items: start; }
   .case-pair--uneven { grid-template-columns: 3fr 2fr; }
   .case-pair--match { grid-template-columns: var(--a) var(--b); }
