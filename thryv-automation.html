@@ -151,10 +151,10 @@
           <div class="case-callout">
             <p class="case-callout__title">Designing the last mile</p>
             <p class="case-callout__sub">The difference between a feature that works and one that feels like it works.</p>
-            <p>When a user selects a result that’s out of view, the canvas brings it back and marks it as selected, whether it’s a sequence or a note. It answers each case with the smallest possible move.</p>
+            <p>On selection, the canvas measures the target’s position against the visible viewport and pans by the smallest offset that brings it fully into view, then applies the selected state. The rule holds for both node types, sequence and note.</p>
             <ul>
-              <li>A result hidden behind the search panel moves to the center.</li>
-              <li>A result beyond the visible canvas moves to the nearest edge.</li>
+              <li>Target occluded by the search panel: pan until it is centered in the region the panel leaves visible.</li>
+              <li>Target outside the viewport bounds: pan until it sits just inside the nearest edge.</li>
             </ul>
           </div>
           <div class="case-callout">
