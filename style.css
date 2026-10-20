@@ -338,6 +338,7 @@ a.logo:hover, a.logo:focus-visible { transform: translateY(-2px); box-shadow: 0 
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
+  border: 1px solid var(--border);
   border-radius: 10px;
   object-fit: cover;
 }
