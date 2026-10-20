@@ -606,6 +606,7 @@ footer {
 .case-pair .case-figure video { aspect-ratio: 2 / 1; object-fit: cover; }
 .case-figure--text { margin-bottom: 32px; }
 .case-figure--small { max-width: 28rem; }
+.case-figure--note { max-width: 33rem; }
 .case-split--logic { margin-bottom: 8px; }
 /* Artwork with a transparent background sits straight on the page */
 .case-figure--bare img { background: transparent; border: 0; border-radius: 0; }
@@ -621,8 +622,6 @@ footer {
   .case-split .case-figure { margin-top: 0; }
   .case-split--logic { grid-template-columns: minmax(0, 24rem) minmax(0, 1fr); gap: 40px; margin-top: 8px; }
   .case-split--logic .case-text p:last-of-type { margin-bottom: 16px; }
-  /* A diagram beside a short note: the text leads, the artwork sits smaller */
-  .case-split--note { grid-template-columns: minmax(0, 1fr) minmax(0, 22rem); }
   .case-pair { grid-template-columns: 1fr 1fr; align-items: start; }
   .case-pair--uneven { grid-template-columns: 3fr 2fr; }
   .case-pair--match { grid-template-columns: var(--a) var(--b); }
