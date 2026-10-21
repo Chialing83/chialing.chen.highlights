@@ -457,13 +457,14 @@ footer {
 }
 @media (min-width: 1024px) {
   main { width: 80vw; }
+  html { font-size: 112.5%; }   /* 18px base */
 }
 @media (min-width: 1440px) {
   main { width: 72vw; max-width: 1280px; }
-  html { font-size: 106.25%; }  /* 17px base */
+  html { font-size: 125%; }     /* 20px base */
 }
 @media (min-width: 1920px) {
-  html { font-size: 112.5%; }   /* 18px base */
+  html { font-size: 137.5%; }   /* 22px base */
 }
 
 /* Keep long text at a readable line length inside the wider column */
