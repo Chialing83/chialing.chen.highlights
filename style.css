@@ -589,6 +589,9 @@ footer {
 .case-stats strong { display: block; font-size: 2rem; line-height: 1.1; letter-spacing: -0.02em; color: var(--accent); }
 .case-stats span { display: block; margin-top: 8px; color: var(--muted); font-size: max(14px, 0.95rem); line-height: 1.5; }
 .case-figure { margin: 32px 0 0; }
+/* A text block after a figure needs the same gap the figure gets above it.
+   Scoped to the section so the side-by-side grids keep their own alignment. */
+.case-section > .case-figure + .case-text { margin-top: 32px; }
 .case-stats--outcome { margin-top: 32px; }
 .case-figure img, .case-figure video {
   display: block;
