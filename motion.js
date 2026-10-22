@@ -88,22 +88,43 @@
     }));
   });
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-visible');
-      io.unobserve(entry.target);
-    });
-  }, { threshold: 0.1 });
-
   document.documentElement.classList.add('reveal-ready');
-  items.forEach((el) => io.observe(el));
 
-  // Safety net: at the very bottom of the page, show anything still waiting
-  const revealRest = () => {
-    if (window.innerHeight + window.scrollY < document.documentElement.scrollHeight - 4) return;
-    items.forEach((el) => { el.classList.add('is-visible'); io.unobserve(el); });
-    window.removeEventListener('scroll', revealRest);
+  // Reveal anything already in or near the viewport. Measuring rectangles works
+  // everywhere, so content is never left invisible when the observer below does
+  // not report. A missed animation is recoverable, a blank page is not.
+  const MARGIN = 80;
+  const sync = () => {
+    const h = window.innerHeight || document.documentElement.clientHeight;
+    for (let i = items.length - 1; i >= 0; i--) {
+      const box = items[i].getBoundingClientRect();
+      if (box.top < h + MARGIN && box.bottom > -MARGIN) {
+        items[i].classList.add('is-visible');
+        items.splice(i, 1);
+      }
+    }
   };
-  window.addEventListener('scroll', revealRest, { passive: true });
+
+  let queued = false;
+  const onScroll = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; sync(); });
+  };
+
+  sync();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('load', sync);
+
+  // The observer is the cheaper path once the page is running. It only ever
+  // reveals, so it cannot fight sync() above.
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { rootMargin: MARGIN + 'px 0px', threshold: 0 });
+    items.slice().forEach((el) => io.observe(el));
+  }
 })();

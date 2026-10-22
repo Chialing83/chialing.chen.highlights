@@ -365,6 +365,7 @@ a.logo:hover, a.logo:focus-visible { transform: translateY(-2px); box-shadow: 0 
   transition: border-color 0.15s, color 0.15s;
 }
 .link-btn:hover, .link-btn:focus-visible { color: var(--accent); border-color: var(--accent); }
+.link-btn svg { width: 17px; height: 17px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 .cards {
   display: grid;

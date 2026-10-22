@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light dark">
   <title>Automation Builder · Chia-Ling Chen</title>
   <meta name="description" content="Case study on redesigning Thryv's Automation Builder canvas so certified partners moved from Legacy to Classic.">
-  <link rel="stylesheet" href="style.css?v=78">
+  <link rel="stylesheet" href="style.css?v=80">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GZDQ40ZDH"></script>
   <script>
@@ -105,7 +105,7 @@
         </div>
         <figure class="case-figure">
           <img decoding="async" src="media/thryv-automation/legacy-vs-classic.jpg" alt="The same automation in Legacy and Classic, with the Pipeline stage moved goal mapped from the Legacy icon palette to the Classic When and Then trigger list" loading="lazy">
-          <figcaption>The same flow in Legacy and Classic. No single change is hard to follow. Nodes look cleaner, goal logic splits clearly into When and Then, and each node carries more status. These are real improvements, but none of them makes a large flow easier to work in. From a partner’s perspective, each improvement requires learning with no direct value to their building process.</figcaption>
+          <figcaption>The same flow in Legacy and Classic. No single change is hard to follow. Nodes look cleaner, goal logic splits clearly into When and Then, and each node carries more status. These are real improvements for new users, but for partners each one steepens the learning curve during migration.</figcaption>
         </figure>
       </section>
 
@@ -256,22 +256,36 @@
         <div class="case-text">
           <p class="case-kicker">Opportunity 3 · What's next</p>
           <h2 id="next">AI-assisted Decision Diamond</h2>
-          <p>⚠️ The Decision Diamond decides which path a workflow takes, but it could only check contact details. Small businesses run on jobs, estimates and appointments, so small business owners linked three flows with tags just to route an estimate by value. Partners wanted more from it, while most small business owners struggled to find or use it.</p>
+          <p>⚠️ The Decision Diamond decides which path a workflow takes, but in the current setup it is restricted to checking contact details. Small businesses run on jobs, estimates and appointments, so small business owners linked three flows with tags on contacts just to route an estimate by value. For partners, reading more than contact details would be a real upgrade to what they can automate. For small business owners the problem is discoverability. Fixing both would turn an underused feature into one that drives not just adoption but revenue. That is why we took it on next.</p>
           <p class="case-callout">I redesigned it to read deals, quotes and appointments, with AI suggestions users review before applying. It’s a first step toward AI that builds whole workflows from a description.</p>
-          <p>I brainstormed with product, scoped with engineering, and picked up the PM hat to spec four priority entities so the build kept moving.</p>
-          <p>After several rounds of debugging, QA and iteration, the feature is live with our alpha group. Beta and general availability are planned for later.</p>
+          <p>During a PM transition I picked up the PM hat to spec four priority entities so the build kept moving. I tested the redesign with two groups, partners and small business owners, using a prototype wired to a live LLM so they judged real suggestions rather than scripted ones. That covered both halves of the problem: whether discoverability was solved, and whether each group got real value. After several rounds of debugging, QA and iteration, the feature is live with our alpha group. Beta and general availability are planned to follow.</p>
         </div>
         <figure class="case-figure case-figure--wide">
-          <img decoding="async" src="media/thryv-automation/decision-diamond.jpg" alt="AI-assisted Decision Diamond, preview" loading="lazy">
+          <img decoding="async" src="media/thryv-automation/decision-diamond.jpg?v=3" alt="AI-assisted Decision Diamond, preview" loading="lazy">
           <figcaption>Design details will be shared once the feature reaches general availability</figcaption>
+        </figure>
+        <div class="case-text">
+          <h3>AI Design Framework</h3>
+          <p>I ran a workshop with product and engineering to collect their ideas for AI in the builder, and interviewed our pilot group for what they actually wanted. Together that came to 48 requests across five themes, from discovery and guidance to pre-launch checks. Every one sounded reasonable on its own, and they piled up faster than we could scope them.</p>
+        </div>
+        <figure class="case-figure case-figure--wide">
+          <img decoding="async" src="media/thryv-automation/ai-request-synthesis.jpg" alt="Workshop and interview requests mapped onto the builder's touch points, grouped into five themes with counts, alongside the Decision Diamond expansion model and the agent hierarchy" loading="lazy">
+          <figcaption>Every request mapped onto a touch point in the builder, then grouped into five themes.</figcaption>
+        </figure>
+        <div class="case-text">
+          <p>I built a taxonomy. One axis is the level of autonomy, how much the AI does and how much work is left to the user, from executing to reviewing to approving. The other is reach, from a focused config change to a platform wide agent. Three things decide where a feature lands: how users work today, how mature our model is for that task, and how much reliance the output can reasonably carry. Routing logic in the Decision Diamond changes where work goes, so a person reviews each rule before it takes effect. Auto renaming a sequence is small enough to check at a glance, so the guardrail is lighter. The user still reads and confirms it, and it is fast and easy.</p>
+        </div>
+        <figure class="case-figure case-figure--wide">
+          <img decoding="async" src="media/thryv-automation/ai-taxonomy.jpg" alt="Three phases from ideation to autonomy, each setting the level of AI involvement, the user workload, what the user gets from a prompt, and whether the user is executing, reviewing or approving" loading="lazy">
+          <figcaption>The taxonomy. Each phase sets how much the AI does and how much work is left to the user.</figcaption>
         </figure>
       </section>
 
       <section class="case-section" aria-labelledby="learning">
         <div class="case-text">
           <h2 id="learning">What I learned</h2>
-          <p>While setting up usability testing with a scripted prototype, I quickly learned that one missed suggestion can erode trust and make the results lose credibility. So I connected the prototype to a live LLM, letting participants react to real suggestions.</p>
-          <p>I also wrote two guides to help other designers spin up prototypes with coded design system components in Claude.</p>
+          <p>While setting up usability testing with a scripted prototype, I quickly learned that one missed suggestion can erode trust and make the results lose credibility. So I worked with the backend team to connect the prototype to a live LLM, letting participants react to real suggestions.</p>
+          <p>I also wrote two guides to help other designers spin up prototypes with coded design system components in Claude. 55% of our design team has successfully onboarded.</p>
           <h3>AI beyond the prototype</h3>
           <p>The team has since brought AI into planning. We turn ideas into working solutions fast, put them in front of engineering early, and use that review to set the scope of each phase. Agreeing on scope is faster when everyone is reacting to something that works, not a description of it or a static wireframe.</p>
         </div>
@@ -300,7 +314,7 @@
     </footer>
   </main>
   <script src="nav.js?v=2"></script>
-  <script src="motion.js?v=7"></script>
+  <script src="motion.js?v=8"></script>
   <script src="lightbox.js?v=3"></script>
   <script>
     // Pin the hero and title like a masthead, letting the case study slide over them,
