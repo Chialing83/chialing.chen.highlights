@@ -76,6 +76,22 @@ you edit it, otherwise returning visitors keep the cached copy.
 - Keep each page's initial load under about 1 MB. The whole site should load in well under five
   seconds.
 
+## Analytics
+
+Two Google IDs are in play and they are not interchangeable.
+
+| ID | What it is | Where it goes |
+| --- | --- | --- |
+| `G-07SR0QSF4S` | Google tag ID | The `gtag/js?id=` URL and the `gtag('config', ...)` call |
+| `G-9GZDQ40ZDH` | Measurement ID | Nowhere in the markup. It is what GA Admin displays, and what `tid=` shows on the outgoing hit |
+
+The tag container for `G-07SR0QSF4S` already routes to `G-9GZDQ40ZDH` as its destination.
+Putting the measurement ID in the script URL returns a 404 from Google, the library never
+loads and nothing is collected. The page still looks fine, so this failure is silent.
+
+To check it is working, load a page and watch for a request to
+`google-analytics.com/g/collect` carrying `tid=G-9GZDQ40ZDH`.
+
 ## Publishing
 
 Work happens on the `multi-page` branch. Push it to two remotes:
